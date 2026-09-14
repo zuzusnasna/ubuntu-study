@@ -1,0 +1,38 @@
+dog@ubuntu:~$ mkdir secret_dir
+dog@ubuntu:~$ ls -l
+total 8
+drwxr-xr-x 2 dog animals 4096 Sep 14 14:30 secret_dir
+drwxr-xrwx 2 dog animals 4096 Sep 14 14:26 test_with_mango
+dog@ubuntu:~$ chmod go= secret_dir/
+dog@ubuntu:~$ ls -l
+total 8
+drwx------ 2 dog animals 4096 Sep 14 14:30 secret_dir
+drwxr-xrwx 2 dog animals 4096 Sep 14 14:26 test_with_mango
+dog@ubuntu:~$ echo "I love pig" > secret_dir/
+bash: secret_dir/: Is a directory
+dog@ubuntu:~$ echo "I love pig" > secret_dir/diary
+dog@ubuntu:~$ cat secret_dir/diary 
+I love pig
+dog@ubuntu:~$ 
+-----------------------------------------------------
+mango@ubuntu:/home/dog/test_with_mango$ cd
+mango@ubuntu:~$ whoami
+mango
+mango@ubuntu:~$ ls -al /home/dog
+ls: cannot open directory '/home/dog': Permission denied
+mango@ubuntu:~$ ls -al /home/dog/secret_dir
+ls: cannot access '/home/dog/secret_dir': Permission denied
+mango@ubuntu:~$ 
+----------------------------------------------------------------------
+jusang@ubuntu:~$ sudo su
+[sudo] password for jusang: 
+root@ubuntu:/home/jusang# ls -al /home/dog/secret_dir/
+total 12
+drwx------ 2 dog animals 4096 Sep 14 14:32 .
+drwxr-x--- 5 dog animals 4096 Sep 14 14:30 ..
+-rw-r--r-- 1 dog animals   11 Sep 14 14:32 diary
+root@ubuntu:/home/jusang# ls -al /home/dog/secret_dir/diary
+-rw-r--r-- 1 dog animals 11 Sep 14 14:32 /home/dog/secret_dir/diary
+root@ubuntu:/home/jusang# cat /home/dog/secret_dir/diary 
+I love pig
+root@ubuntu:/home/jusang# 

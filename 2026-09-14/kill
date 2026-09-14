@@ -1,0 +1,20 @@
+jusang@ubuntu:~$ ps -ef | grep sleep
+jusang      8264    6001  0 15:21 pts/0    00:00:00 sleep 300
+jusang      8266    5896  0 15:21 pts/2    00:00:00 grep --color=auto sleep
+jusang@ubuntu:~$ kill -kill 8264
+jusang@ubuntu:~$ 
+------------------------------------------------------------------------------
+jusang@ubuntu:~$ sleep 300
+Killed
+jusang@ubuntu:~$ 
+------------------------------------------------------------------------------
+
+
+jusang@ubuntu:~$ killall -TERM sleep
+jusang@ubuntu:~$ 
+--------------------------------------
+jusang@ubuntu:~$ sleep 300
+Terminated
+--------------------------------------
+
+
