@@ -21,7 +21,14 @@ ubuntu-study/
 │   ├── hello
 │   └── hello1
 ├── 2026-09-14/
-│   └── study.md
+│   ├── study.md
+│   ├── greetings
+│   ├── normal
+│   ├── study1
+│   ├── study2
+│   ├── study3
+│   ├── study4
+│   └── study5
 └── 다음 학습 날짜/
     └── 학습내용.md
 ```
