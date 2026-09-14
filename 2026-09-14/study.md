@@ -221,83 +221,9 @@ user is not in the sudoers file
 
 따라서 관리자 작업을 수행할 때는 현재 계정에 sudo 권한이 있는지 확인해야 한다.
 
----
+# Ctrl + Alt + t
 
-## 7. Git 커밋과 Push
-
-학습 내용을 Git에 추가:
-
-```bash
-git add .
-```
-
-커밋:
-
-```bash
-git commit -m "permission edit"
-```
-
-원격 저장소에 Push:
-
-```bash
-git push origin main
-```
-
-### Push가 거절되는 경우
-
-다음과 같은 메시지가 발생할 수 있다.
-
-```text
-! [rejected] main -> main (fetch first)
-```
-
-이는 원격 저장소에 로컬 저장소에는 없는 커밋이 존재하기 때문이다.
-
-단순히 다시 `git push`하는 것으로는 해결되지 않는다.
-
----
-
-## 8. 로컬과 원격 브랜치가 서로 다른 경우
-
-`git pull` 실행 시 다음과 같은 메시지가 나타날 수 있다.
-
-```text
-You have divergent branches and need to specify how to reconcile them.
-```
-
-이는 로컬과 원격에서 각각 새로운 커밋이 발생하여 브랜치가 서로 갈라진 상태이다.
-
-이때 원격 변경사항을 먼저 반영하면서 로컬 커밋을 유지하려면:
-
-```bash
-git pull --rebase origin main
-```
-
-충돌이 없다면 이후:
-
-```bash
-git push origin main
-```
-
-충돌이 발생하면:
-
-```bash
-git status
-```
-
-로 충돌 파일을 확인하고 해결한다.
-
-### 주의
-
-다음 명령어를 무조건 사용하는 것은 위험하다.
-
-```bash
-git push --force
-```
-
-원격 저장소의 다른 작업 내용을 덮어쓸 수 있으므로, 먼저 `git pull --rebase` 등을 이용하여 변경사항을 안전하게 합치는 것이 좋다.
-
----
+새로운 터미널 열기
 
 # 오늘 학습 핵심 키워드
 
