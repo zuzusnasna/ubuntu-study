@@ -1,0 +1,64 @@
+jusang@ubuntu:~$ cd /tmp/playground/
+jusang@ubuntu:/tmp/playground$ sudo chown -R dog:animals /tmp/playground/msg_from_dog
+-----------------------------------------------------------------------------------------
+jusang@ubuntu:~$ cd /tmp/playground/
+jusang@ubuntu:/tmp/playground$ chmod g+w msg_
+chmod: cannot access 'msg_': No such file or directory
+jusang@ubuntu:/tmp/playground$ chmod g+w msg_from_dog 
+jusang@ubuntu:/tmp/playground$ su dog
+Password: 
+dog@ubuntu:/tmp/playground$ nano
+dog@ubuntu:/tmp/playground$ cat exec_test 
+pwd
+whoami
+ls -al
+dog@ubuntu:/tmp/playground$ ls -l exec_test 
+-rw-r--r-- 1 dog animals 18 Sep 14 12:27 exec_test
+dog@ubuntu:/tmp/playground$ chmod a+x exec_test 
+dog@ubuntu:/tmp/playground$ ./exec_test 
+/tmp/playground
+dog
+total 16
+drwxrwxrwx  2 root   root    4096 Sep 14 12:27 .
+drwxrwxrwt 21 root   root    4096 Sep 14 11:55 ..
+-rwxr-xr-x  1 dog    animals   18 Sep 14 12:27 exec_test
+-rw-rw----  1 jusang jusang    14 Sep 14 12:07 msg_from_dog
+dog@ubuntu:/tmp/playground$ chmod dog:animals msg_from_dog 
+chmod: invalid mode: ‘dog:animals’
+Try 'chmod --help' for more information.
+dog@ubuntu:/tmp/playground$ chown dog:animal msg_from_dog 
+chown: invalid group: ‘dog:animal’
+dog@ubuntu:/tmp/playground$ chown -R dog:animal msg_from_dog 
+chown: invalid group: ‘dog:animal’
+dog@ubuntu:/tmp/playground$ chown -R dog : animals msg_from_dog 
+chown: cannot access ':': No such file or directory
+chown: cannot access 'animals': No such file or directory
+chown: changing ownership of 'msg_from_dog': Operation not permitted
+dog@ubuntu:/tmp/playground$ chown -R dog:animals msg_from_dog 
+chown: changing ownership of 'msg_from_dog': Operation not permitted
+dog@ubuntu:/tmp/playground$ sudo chown -R dog:animals msg_from_dog 
+[sudo] password for dog: 
+dog is not in the sudoers file.
+dog@ubuntu:/tmp/playground$ ./exec_test 
+/tmp/playground
+dog
+total 16
+drwxrwxrwx  2 root root    4096 Sep 14 12:27 .
+drwxrwxrwt 21 root root    4096 Sep 14 11:55 ..
+-rwxr-xr-x  1 dog  animals   18 Sep 14 12:27 exec_test
+-rw-rw----  1 dog  animals   14 Sep 14 12:07 msg_from_dog
+dog@ubuntu:/tmp/playground$ 
+-----------------------------------------------------------------------------------
+jusang@ubuntu:~$ su pig
+Password: 
+pig@ubuntu:/home/jusang$ car msg
+Command 'car' not found, but can be installed with:
+apt install ucommon-utils
+Please ask your administrator.
+pig@ubuntu:/home/jusang$ cd /tmp/playground/
+pig@ubuntu:/tmp/playground$ cat msg_from_dog 
+cat: msg_from_dog: Permission denied
+pig@ubuntu:/tmp/playground$ cat msg_from_dog 
+hello freinds
+pig@ubuntu:/tmp/playground$ 
+

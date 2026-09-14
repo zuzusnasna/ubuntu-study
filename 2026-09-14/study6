@@ -1,0 +1,29 @@
+jusang@ubuntu:~/Desktop$ cd
+jusang@ubuntu:~$ cd /tmp/playground/
+jusang@ubuntu:/tmp/playground$ pwd
+/tmp/playground
+jusang@ubuntu:/tmp/playground$ echo "hello freinds" > msg_from_dog
+jusang@ubuntu:/tmp/playground$ ls -l msg_from_dog 
+-rw-rw-r-- 1 jusang jusang 14 Sep 14 12:07 msg_from_dog
+jusang@ubuntu:/tmp/playground$ cat msg_from_dog 
+hello freinds
+jusang@ubuntu:/tmp/playground$ chmod o-r msg_from_dog 
+jusang@ubuntu:/tmp/playground$ ls -l
+total 4
+-rw-rw---- 1 jusang jusang 14 Sep 14 12:07 msg_from_dog
+----------------------------------------------------------------------
+jusang@ubuntu:~$ su - mango
+Password: 
+mango@ubuntu:~$ whoami
+mango
+mango@ubuntu:~$ cd /tmp/playground/
+mango@ubuntu:/tmp/playground$ ls -l
+total 4
+-rw-rw-r-- 1 jusang jusang 14 Sep 14 12:07 msg_from_dog
+mango@ubuntu:/tmp/playground$ ls -l msg_from_dog 
+-rw-rw-r-- 1 jusang jusang 14 Sep 14 12:07 msg_from_dog
+mango@ubuntu:/tmp/playground$ cat msg_from_dog 
+hello freinds
+mango@ubuntu:/tmp/playground$ cat msg_from_dog 
+cat: msg_from_dog: Permission denied
+

@@ -1,0 +1,25 @@
+jusang@ubuntu:~$ su dog
+Password: 
+dog@ubuntu:/home/jusang$ cd
+dog@ubuntu:~$ pwd
+/home/dog
+dog@ubuntu:~$ mkdir test_with_mango
+dog@ubuntu:~$ ls -l
+total 4
+drwxr-xr-x 2 dog animals 4096 Sep 14 12:41 test_with_mango
+dog@ubuntu:~$ echo "echo I am the king" > test_with_mango/message
+dog@ubuntu:~$ cat test_with_mango/message 
+echo I am the king
+dog@ubuntu:~$ ls -l test_with_mango/
+total 4
+-rw-r--r-- 1 dog animals 19 Sep 14 12:42 message
+dog@ubuntu:~$ chmod a+x test_with_mango/
+dog@ubuntu:~$ ls -l test_with_mango/
+total 4
+-rw-r--r-- 1 dog animals 19 Sep 14 12:42 message
+dog@ubuntu:~$ chmod a+x test_with_mango/message 
+dog@ubuntu:~$ ls -l test_with_mango/
+total 4
+-rwxr-xr-x 1 dog animals 19 Sep 14 12:42 message
+dog@ubuntu:~$ ./test_with_mango/message 
+I am the king
