@@ -1,0 +1,24 @@
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ echo "hello" > greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-rw-r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod 777 greerings
+chmod: cannot access 'greerings': No such file or directory
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod 777 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rwxrwxrwx 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod 644 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod 000 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+---------- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ cat greetings
+cat: greetings: Permission denied
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod 644 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ cat greetings
+hello
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ 

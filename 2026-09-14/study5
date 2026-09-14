@@ -1,0 +1,42 @@
+jusang@ubuntu:/$ cd ~
+jusang@ubuntu:~$ whoami
+jusang
+jusang@ubuntu:~$ cd /tmp
+jusang@ubuntu:/tmp$ sudo mkdir playground
+[sudo] password for jusang: 
+jusang@ubuntu:/tmp$ ls -l
+total 60
+drwxr-xr-x 2 root root 4096 Sep 14 11:43 playground
+drwx------ 3 root root 4096 Sep 14 10:03 snap-private-tmp
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-colord.service-Z6X0O5
+drwx------ 3 root root 4096 Sep 14 10:24 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-fwupd.service-KNwYdF
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-ModemManager.service-glA1Ek
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-polkit.service-XqU5k2
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-power-profiles-daemon.service-yqH8g8
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-switcheroo-control.service-yTLjf7
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-logind.service-X63HNd
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-oomd.service-YFsHkC
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-resolved.service-LdHCLk
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-timesyncd.service-NYP4Lk
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-upower.service-Wn8QBC
+drwxrwxrwt 2 root root 4096 Sep 14 11:23 VMwareDnD
+drwx------ 2 root root 4096 Sep 14 10:03 vmware-root_716-2965513684
+jusang@ubuntu:/tmp$ sudo chmod 777 playground/
+jusang@ubuntu:/tmp$ ls -l
+total 60
+drwxrwxrwx 2 root root 4096 Sep 14 11:43 playground
+drwx------ 3 root root 4096 Sep 14 10:03 snap-private-tmp
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-colord.service-Z6X0O5
+drwx------ 3 root root 4096 Sep 14 10:24 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-fwupd.service-KNwYdF
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-ModemManager.service-glA1Ek
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-polkit.service-XqU5k2
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-power-profiles-daemon.service-yqH8g8
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-switcheroo-control.service-yTLjf7
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-logind.service-X63HNd
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-oomd.service-YFsHkC
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-resolved.service-LdHCLk
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-systemd-timesyncd.service-NYP4Lk
+drwx------ 3 root root 4096 Sep 14 10:03 systemd-private-a1665e033d9547ab9950f1e0edf4cc79-upower.service-Wn8QBC
+drwxrwxrwt 2 root root 4096 Sep 14 11:23 VMwareDnD
+drwx------ 2 root root 4096 Sep 14 10:03 vmware-root_716-2965513684
+jusang@ubuntu:/tmp$ 

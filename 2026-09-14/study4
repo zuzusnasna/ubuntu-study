@@ -1,0 +1,22 @@
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod a+w greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-rw-rw- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod a-w greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-r--r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod ug=rw greetings 
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-rw-r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ chmod g-w greetings 
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l greetings
+-rw-r--r-- 1 jusang jusang 6 Sep 14 11:24 greetings
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l
+total 20
+-rw-r--r-- 1 jusang jusang     6 Sep 14 11:24 greetings
+-rw-rw-r-- 1 dog    animals   17 Sep 14 11:07 normal
+-rw-rw-r-- 1 jusang jusang   385 Sep 14 10:57 study1
+-rw-rw-r-- 1 jusang jusang   621 Sep 14 11:13 study2
+-rw-rw-r-- 1 jusang jusang  1397 Sep 14 11:28 study3
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ 

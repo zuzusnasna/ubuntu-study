@@ -1,0 +1,11 @@
+jusang@ubuntu:~/Desktop/ubuntu-study$ nano study1
+jusang@ubuntu:~/Desktop/ubuntu-study$ echo "hello world" > normal file
+jusang@ubuntu:~/Desktop/ubuntu-study$ cd 2026-09-14
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ sudo chown dog normal
+[sudo] password for jusang: 
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l normal
+-rw-rw-r-- 1 dog jusang 17 Sep 14 11:07 normal
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ sudo chown dog:animals normal
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ ls -l normal
+-rw-rw-r-- 1 dog animals 17 Sep 14 11:07 normal
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-14$ 
