@@ -354,6 +354,94 @@ user is not in the sudoers file
 
 ---
 
+## 9. mv를 이용한 파일과 디렉터리 이동 및 이름 변경
+
+`mv`는 파일이나 디렉터리를 다른 위치로 이동하거나 이름을 변경할 때 사용하는 명령어이다. Ubuntu 공식 문서와 `mv` 매뉴얼에서도 이동과 이름 변경을 모두 `mv`로 처리한다고 설명한다. citeturn0search0turn0search5
+
+기본 형식:
+
+```bash
+mv [옵션] 원본 대상
+```
+
+### 파일을 다른 디렉터리로 이동
+
+```bash
+mv file.txt test/
+```
+
+`file.txt`를 `test` 디렉터리로 이동한다.
+
+### 파일 이름 변경
+
+```bash
+mv old.txt new.txt
+```
+
+같은 디렉터리에서 대상 이름을 다르게 지정하면 파일 이름이 변경된다.
+
+### 이동하면서 이름 변경
+
+```bash
+mv old.txt test/new.txt
+```
+
+파일을 `test` 디렉터리로 이동하면서 `new.txt`라는 이름으로 변경할 수 있다.
+
+### 디렉터리 이름 변경
+
+```bash
+mv old_directory new_directory
+```
+
+디렉터리 자체의 이름을 변경할 수 있으며 내부에 있는 파일도 그대로 유지된다.
+
+### 여러 파일을 한 번에 이동
+
+```bash
+mv file1.txt file2.txt test/
+```
+
+여러 파일을 지정하면 마지막 인자인 `test/`가 대상 디렉터리가 된다.
+
+### 자주 사용하는 옵션
+
+```bash
+mv -i file.txt test/
+```
+
+대상에 같은 이름의 파일이 있을 경우 덮어쓰기 전에 확인한다.
+
+```bash
+mv -n file.txt test/
+```
+
+기존 파일을 덮어쓰지 않는다.
+
+```bash
+mv -v file.txt test/
+```
+
+실제로 어떤 이동 작업이 수행되는지 출력한다.
+
+### `mv`와 `cp`의 차이
+
+```bash
+mv file.txt test/
+```
+
+→ 원본 파일이 이동하므로 기존 위치에서는 사라진다.
+
+```bash
+cp file.txt test/
+```
+
+→ 원본을 유지하면서 복사본을 만든다.
+
+따라서 `mv`는 파일을 이동하거나 이름을 변경할 때 사용하고, `cp`는 원본을 유지하면서 복사할 때 사용한다. citeturn0search6
+
+---
+
 # Ctrl + Alt + t
 
 새로운 터미널 열기
@@ -379,11 +467,14 @@ user is not in the sudoers file
 - `groupadd`
 - `usermod`
 - `gpasswd`
+- `mv`
 - `r / w / x`
 - `u / g / o`
 - Linux 파일 권한
 - Linux 사용자 그룹
 - 파일 소유자와 소유 그룹
+- 파일 및 디렉터리 이동
+- 파일 및 디렉터리 이름 변경
 - Git commit
 - Git push
 - Git pull
@@ -402,5 +493,7 @@ user is not in the sudoers file
 또한 Linux의 `rwx` 파일 권한과 `chmod`, `sudo`의 기본적인 사용 방법을 학습했다.
 
 사용자와 그룹 관리에서는 `groupadd`, `usermod`, `gpasswd`를 이용해 그룹을 생성하고 사용자를 그룹에 추가하거나 제거하는 방법을 학습했다. 또한 `chown`을 이용해 파일의 소유자와 소유 그룹을 변경하는 방법과 sudo 권한이 없는 사용자가 소유권 변경을 수행할 수 없는 상황도 직접 확인했다.
+
+추가로 `mv` 명령어를 학습하면서 파일과 디렉터리를 다른 위치로 이동하거나 이름을 변경하는 방법을 익혔다. `mv`는 단순히 파일을 이동하는 것뿐만 아니라 같은 디렉터리에서 다른 이름을 지정하여 이름을 변경할 수도 있으며, 이동과 이름 변경을 한 번에 처리할 수도 있다는 것을 확인했다. 또한 `-i`, `-n`, `-v` 옵션을 통해 덮어쓰기 방지와 작업 확인 등의 기능을 사용할 수 있다는 것도 학습했다.
 
 Git에서는 로컬과 원격 저장소의 커밋이 서로 달라 Push가 거절되는 상황을 경험했다. 이때 `git pull --rebase`를 이용하여 원격 변경사항을 먼저 반영한 뒤 Push하는 방법을 학습했다.
