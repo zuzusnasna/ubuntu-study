@@ -1,0 +1,149 @@
+jusang@ubuntu:~/redirect-test$ wc /etc/passwd
+  54   94 3076 /etc/passwd
+jusang@ubuntu:~/redirect-test$ wc -l /etc/passwd
+54 /etc/passwd
+jusang@ubuntu:~/redirect-test$ wc -w /etc/passwd
+94 /etc/passwd
+jusang@ubuntu:~/redirect-test$ wc -c /etc/passwd
+3076 /etc/passwd
+jusang@ubuntu:~/redirect-test$ 
+---------------------------------------------------
+jusang@ubuntu:~/redirect-test$ cd
+jusang@ubuntu:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+tmpfs             395616      1944    393672   1% /run
+/dev/sda2       20463184  10856328   8542052  56% /
+tmpfs            1978076         0   1978076   0% /dev/shm
+tmpfs               5120         8      5112   1% /run/lock
+tmpfs             395612       136    395476   1% /run/user/1000
+/dev/sr0           91576     91576         0 100% /media/jusang/CDROM
+vmhgfs-fuse    228497404 179636184  48861220  79% /mnt/hgfs
+jusang@ubuntu:~$ df -k
+Filesystem     1K-blocks      Used Available Use% Mounted on
+tmpfs             395616      1944    393672   1% /run
+/dev/sda2       20463184  10856328   8542052  56% /
+tmpfs            1978076         0   1978076   0% /dev/shm
+tmpfs               5120         8      5112   1% /run/lock
+tmpfs             395612       136    395476   1% /run/user/1000
+/dev/sr0           91576     91576         0 100% /media/jusang/CDROM
+vmhgfs-fuse    228497404 179636264  48861140  79% /mnt/hgfs
+jusang@ubuntu:~$ df /etc/passwd
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda2       20463184 10856328   8542052  56% /
+jusang@ubuntu:~$ df -k /etc/passwd
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/sda2       20463184 10856328   8542052  56% /
+------------------------------------------------------------------------
+jusang@ubuntu:~$ du
+4	./project
+8	./.local/state/wireplumber
+12	./.local/state
+4	./.local/share/gnome-settings-daemon
+8	./.local/share/gnome-shell
+4	./.local/share/backgrounds
+4	./.local/share/sounds
+24	./.local/share/Trash/info
+4	./.local/share/Trash/files/New Folder
+20	./.local/share/Trash/files
+4	./.local/share/Trash/expunged
+52	./.local/share/Trash
+4	./.local/share/org.gnome.TextEditor/drafts
+16	./.local/share/org.gnome.TextEditor
+4	./.local/share/flatpak/db
+8	./.local/share/flatpak
+76	./.local/share/gvfs-metadata
+4	./.local/share/ibus-table
+12	./.local/share/keyrings
+4	./.local/share/icc
+4	./.local/share/nano
+4	./.local/share/nautilus/scripts
+356	./.local/share/nautilus/tags
+364	./.local/share/nautilus
+4	./.local/share/applications
+8	./.local/share/evolution/tasks/system
+4	./.local/share/evolution/tasks/trash
+16	./.local/share/evolution/tasks
+8	./.local/share/evolution/calendar/system
+4	./.local/share/evolution/calendar/trash
+16	./.local/share/evolution/calendar
+4	./.local/share/evolution/addressbook/system/photos
+100	./.local/share/evolution/addressbook/system
+4	./.local/share/evolution/addressbook/trash
+108	./.local/share/evolution/addressbook
+4	./.local/share/evolution/mail/trash
+8	./.local/share/evolution/mail
+4	./.local/share/evolution/memos/trash
+8	./.local/share/evolution/memos
+160	./.local/share/evolution
+740	./.local/share
+756	./.local
+4	./Public
+427700	./Downloads
+.
+.
+.
+-----------------------------------------------------------------------------
+jusang@ubuntu:~$ mkdir tar-test
+jusang@ubuntu:~$ cd tar-test/
+jusang@ubuntu:~/tar-test$ ls -al /etc > etc-files
+jusang@ubuntu:~/tar-test$ cp /etc/passwd
+cp: missing destination file operand after '/etc/passwd'
+Try 'cp --help' for more information.
+jusang@ubuntu:~/tar-test$ cp /etc/passwd.
+cp: missing destination file operand after '/etc/passwd.'
+Try 'cp --help' for more information.
+jusang@ubuntu:~/tar-test$ cp /etc/passwd .
+jusang@ubuntu:~/tar-test$ cp /var/log/syslog .
+jusang@ubuntu:~/tar-test$ ls -al
+total 3436
+drwxrwxr-x  2 jusang jusang    4096 Sep 15 12:23 .
+drwxr-x--- 18 jusang jusang    4096 Sep 15 12:22 ..
+-rw-rw-r--  1 jusang jusang   20712 Sep 15 12:22 etc-files
+-rw-r--r--  1 jusang jusang    3076 Sep 15 12:23 passwd
+-rw-r-----  1 jusang jusang 3477666 Sep 15 12:23 syslog
+jusang@ubuntu:~/tar-test$ tar -c -f archive.tar passwd syslog
+jusang@ubuntu:~/tar-test$ ls -al archive.tar 
+-rw-rw-r-- 1 jusang jusang 3491840 Sep 15 12:24 archive.tar
+jusang@ubuntu:~/tar-test$ tar -t -f archive.tar 
+passwd
+syslog
+jusang@ubuntu:~/tar-test$ tar -r -f archive.tar etc-files 
+jusang@ubuntu:~/tar-test$ tar -t -f archive.tar 
+passwd
+syslog
+etc-files
+-----------------------------------------------------------------
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15$ cd tar-test/
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tar-test$ tar -cv2f compress.tar.gz etc-files passwd syslog
+tar: Options '-[0-7][lmh]' not supported by *this* tar
+Try 'tar --help' or 'tar --usage' for more information.
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tar-test$ tar -cvzf compress.tar.gz etc-files passwd syslog
+etc-files
+passwd
+syslog
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tar-test$ ls -al
+total 7412
+drwxrwxr-x 2 jusang jusang    4096 Sep 15 12:38 .
+drwxrwxr-x 5 jusang jusang    4096 Sep 15 12:30 ..
+-rw-rw-r-- 1 jusang jusang 3512320 Sep 15 12:26 archive.tar
+-rw-rw-r-- 1 jusang jusang  554430 Sep 15 12:38 compress.tar.gz
+-rw-rw-r-- 1 jusang jusang   20712 Sep 15 12:22 etc-files
+-rw-r--r-- 1 jusang jusang    3076 Sep 15 12:23 passwd
+-rw-r----- 1 jusang jusang 3477666 Sep 15 12:23 syslog
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tar-test$ cd ..
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15$ mkdir tgz-test
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15$ cd tgz-test/
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tgz-test$ tar -xvzf ../tar-test/compress.tar.gz 
+etc-files
+passwd
+syslog
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tgz-test$ ls al
+ls: cannot access 'al': No such file or directory
+jusang@ubuntu:~/Desktop/ubuntu-study/2026-09-15/tgz-test$ ls -al
+total 3436
+drwxrwxr-x 2 jusang jusang    4096 Sep 15 12:38 .
+drwxrwxr-x 6 jusang jusang    4096 Sep 15 12:38 ..
+-rw-rw-r-- 1 jusang jusang   20712 Sep 15 12:22 etc-files
+-rw-r--r-- 1 jusang jusang    3076 Sep 15 12:23 passwd
+-rw-r----- 1 jusang jusang 3477666 Sep 15 12:23 syslog
+
