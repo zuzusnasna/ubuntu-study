@@ -1,0 +1,42 @@
+
+주상혁
+jusang@ubuntu:~$ cd pr
+practice_exam/ project/       
+jusang@ubuntu:~$ cd practic_exam/
+jusang@ubuntu:~$ cd practice_exam/
+jusang@ubuntu:~/practice_exam$ touch apple
+jusang@ubuntu:~/practice_exam$ touch banana
+jusang@ubuntu:~/practice_exam$ touch orange
+jusang@ubuntu:~/practice_exam$ cd ..
+jusang@ubuntu:~$ tar -czvf practice_exam.tar.gz practice_exam
+practice_exam/
+practice_exam/apple
+practice_exam/banana
+practice_exam/orange
+jusang@ubuntu:~$ mkdir -p /tmp/exam_restore
+jusang@ubuntu:~$ tar -xzvf ~/practice_exam.tar.gz -C /tmp/exam_restore
+practice_exam/
+practice_exam/apple
+practice_exam/banana
+practice_exam/orange
+jusang@ubuntu:/tmp/exam_restore$ cd practice_exam/
+jusang@ubuntu:/tmp/exam_restore/practice_exam$ ls -al
+total 8
+drwxrwxr-x 2 jusang jusang 4096 Sep 15 14:19 .
+drwxrwxr-x 3 jusang jusang 4096 Sep 15 14:20 ..
+-rw-rw-r-- 1 jusang jusang    0 Sep 15 14:17 apple
+-rw-rw-r-- 1 jusang jusang    0 Sep 15 14:17 banana
+-rw-rw-r-- 1 jusang jusang    0 Sep 15 14:17 orange
+jusang@ubuntu:/tmp/exam_restore/practice_exam$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+tmpfs             395616      1944    393672   1% /run
+/dev/sda2       20463184  10873852   8524528  57% /
+tmpfs            1978076         0   1978076   0% /dev/shm
+tmpfs               5120         8      5112   1% /run/lock
+tmpfs             395612       140    395472   1% /run/user/1000
+/dev/sr0           91576     91576         0 100% /media/jusang/CDROM
+vmhgfs-fuse    228497404 179678684  48818720  79% /mnt/hgfs
+jusang@ubuntu:/tmp/exam_restore/practice_exam$ du
+4	.
+
+연습문제
